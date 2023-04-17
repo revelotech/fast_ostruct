@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary     = 'A realy fast open struct alternative'
   spec.licenses    = ['MIT']
 
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.7.0')
+  spec.required_ruby_version = Gem::Requirement.new('>= 3.0')
 
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
