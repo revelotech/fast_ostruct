@@ -4,7 +4,7 @@ require 'json'
 require 'set'
 
 class FastOpenStruct
-  VERSION = '1.0.0'
+  VERSION = '1.0.1'
 
   INITIALIZE_OPTIONS = { deep_initialize: true }.freeze
   ATTRIBUTES_OPTIONS = { symbolize_keys: false }.freeze
@@ -41,12 +41,12 @@ class FastOpenStruct
   end
 
   def to_json(*_args)
-    attributes.to_json
+    JSON.generate(attributes)
   end
   alias serializable_hash attributes
   alias to_h attributes
 
-  # Accessible
+  # Hasheable
   def [](name)
     attribute_get(name)
   end
@@ -104,10 +104,10 @@ class FastOpenStruct
       @defined_methods ||= Set.new
     end
 
-    def define_method!(name)
+    def define_methods!(name)
       class_exec do
-        attr_writer name unless method_defined?("#{name}=")
-        attr_reader name unless method_defined?(name)
+        attr_accessor name
+
         defined_methods << name
       end
     end
@@ -126,16 +126,16 @@ class FastOpenStruct
     return if name.nil?
 
     name = name.to_sym
-    self.class.define_method!(name) unless self.class.defined_methods.include?(name)
-    instance_variable_set("@#{name}", value)
+    self.class.define_methods!(name) unless self.class.defined_methods.include?(name)
+    instance_variable_set(:"@#{name}", value)
   end
 
   def attribute_get(name)
-    instance_variable_get("@#{name}")
+    instance_variable_get(:"@#{name}")
   end
 
   def attribute_unset(name)
-    remove_instance_variable("@#{name}")
+    remove_instance_variable(:"@#{name}")
   end
 
   def method_missing(mid, *args)

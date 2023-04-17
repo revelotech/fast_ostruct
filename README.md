@@ -61,60 +61,61 @@ my_struct.dig(:age) # => 30
 Initialization benchmark
 
 Warming up --------------------------------------
-          OpenStruct    15.041k i/100ms
-      FastOpenStruct   116.264k i/100ms
+          OpenStruct     6.967k i/100ms
+      FastOpenStruct    45.819k i/100ms
 Calculating -------------------------------------
-          OpenStruct    152.606k (± 2.4%) i/s -    767.091k in   5.029398s
-      FastOpenStruct      1.148M (± 1.4%) i/s -      5.813M in   5.063585s
+          OpenStruct     70.614k (± 4.4%) i/s -    355.317k in   5.042038s
+      FastOpenStruct    454.480k (± 1.6%) i/s -      2.291M in   5.042112s
 
 Comparison:
-      FastOpenStruct:  1148278.4 i/s
-          OpenStruct:   152606.3 i/s - 7.52x  slower
+      FastOpenStruct:   454479.6 i/s
+          OpenStruct:    70614.1 i/s - 6.44x  slower
 
 
 
 Assignment Benchmark
 
 Warming up --------------------------------------
-          OpenStruct   682.010k i/100ms
-      FastOpenStruct     1.972M i/100ms
+          OpenStruct   317.626k i/100ms
+      FastOpenStruct     1.413M i/100ms
 Calculating -------------------------------------
-          OpenStruct      6.980M (± 3.3%) i/s -     35.465M in   5.086554s
-      FastOpenStruct     19.964M (± 0.8%) i/s -    100.582M in   5.038516s
+          OpenStruct      3.222M (± 0.3%) i/s -     16.199M in   5.027118s
+      FastOpenStruct     14.663M (± 1.0%) i/s -     73.465M in   5.010767s
 
 Comparison:
-      FastOpenStruct: 19964034.5 i/s
-          OpenStruct:  6980499.3 i/s - 2.86x  slower
+      FastOpenStruct: 14662985.4 i/s
+          OpenStruct:  3222330.4 i/s - 4.55x  slower
 
 
 
 Access Benchmark
 
 Warming up --------------------------------------
-          OpenStruct     1.005M i/100ms
-      FastOpenStruct     2.185M i/100ms
+          OpenStruct   455.965k i/100ms
+      FastOpenStruct     1.511M i/100ms
 Calculating -------------------------------------
-          OpenStruct     10.085M (± 0.5%) i/s -     51.245M in   5.081712s
-      FastOpenStruct     21.798M (± 1.1%) i/s -    109.268M in   5.013290s
+          OpenStruct      4.533M (± 3.2%) i/s -     22.798M in   5.034950s
+      FastOpenStruct     15.154M (± 0.5%) i/s -     77.063M in   5.085386s
 
 Comparison:
-      FastOpenStruct: 21798290.7 i/s
-          OpenStruct: 10084528.1 i/s - 2.16x  slower
+      FastOpenStruct: 15154237.8 i/s
+          OpenStruct:  4533257.4 i/s - 3.34x  slower
 
 
 
 All-Together Benchmark
 
 Warming up --------------------------------------
-          OpenStruct    12.918k i/100ms
-      FastOpenStruct   111.460k i/100ms
+          OpenStruct     5.084k i/100ms
+      FastOpenStruct   218.702k i/100ms
 Calculating -------------------------------------
-          OpenStruct    127.875k (± 2.7%) i/s -    645.900k in   5.054749s
-      FastOpenStruct      1.122M (± 1.1%) i/s -      5.684M in   5.066350s
+          OpenStruct     52.705k (± 4.7%) i/s -    264.368k in   5.027437s
+      FastOpenStruct      2.135M (± 4.1%) i/s -     10.716M in   5.028416s
 
 Comparison:
-      FastOpenStruct:  1122147.0 i/s
-          OpenStruct:   127874.6 i/s - 8.78x  slower
+      FastOpenStruct:  2135322.0 i/s
+          OpenStruct:    52704.7 i/s - 40.51x  slower
+
 ```
 
 ## Contributing
