@@ -1,6 +1,6 @@
 # FastOpenStruct
 
-It was inspirated on [DynamicClass](https://github.com/amcaplan/dynamic_class/blob/master/lib/dynamic_class.rb) gem.
+It was inspirated on [DynamicClass](https://github.com/amcaplan/dynamic_class) gem.
 
 The main purpose of this gem is behave like an OpenStruct, but with some extra powers.
 
