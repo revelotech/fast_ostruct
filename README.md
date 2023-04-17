@@ -1,5 +1,8 @@
 # Fast OpenStruct
 
+[![FastOpenStruct CI](https://github.com/w-osilva/fast_ostruct/actions/workflows/fast-ostruct_ci.yml/badge.svg)](https://github.com/w-osilva/fast_ostruct/actions/workflows/fast-ostruct_ci.yml)
+[![Gem Version](https://badge.fury.io/rb/fast_ostruct.svg)](https://badge.fury.io/rb/fast_ostruct)
+
 It was inspirated on [DynamicClass](https://github.com/amcaplan/dynamic_class) gem.
 
 The main purpose of this gem is behave like an OpenStruct, but with some extra powers.

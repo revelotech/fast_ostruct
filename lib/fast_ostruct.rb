@@ -4,7 +4,7 @@ require 'json'
 require 'set'
 
 class FastOpenStruct
-  VERSION = '1.0.0-beta.1'
+  VERSION = '1.0.0'
 
   INITIALIZE_OPTIONS = { deep_initialize: true }.freeze
   ATTRIBUTES_OPTIONS = { symbolize_keys: false }.freeze
