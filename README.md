@@ -1,4 +1,4 @@
-# FastOpenStruct
+# Fast OpenStruct
 
 It was inspirated on [DynamicClass](https://github.com/amcaplan/dynamic_class) gem.
 
@@ -20,7 +20,7 @@ The main difference for OpenStruct is that this implementation has a cache of th
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'fast_open_struct'
+gem 'fast_ostruct'
 ```
 
 And then execute:
@@ -29,13 +29,13 @@ And then execute:
 
 Or install it yourself as:
     
-    $ gem install fast_open_struct
+    $ gem install fast_ostruct
 
 
 ## Usage
 
 ```ruby
-require 'fast_open_struct'
+require 'fast_ostruct'
 
 attributes = { name: 'John' }
 

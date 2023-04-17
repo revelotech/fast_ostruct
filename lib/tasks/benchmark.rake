@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'benchmark/ips'
-require 'fast_open_struct'
+require 'fast_ostruct'
 require 'ostruct'
 
 # rubocop:disable Style/OpenStructUse
