@@ -5,7 +5,7 @@ AllCops:
   Exclude:
     - 'spec/fixtures/**/*'
     - '.git/**/*'
-  TargetRubyVersion: 2.7.0
+  TargetRubyVersion: 3.0
   SuggestExtensions: false
 
 Style/FormatStringToken:
