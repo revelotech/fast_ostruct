@@ -1,0 +1,68 @@
+require: rubocop-performance
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'spec/fixtures/**/*'
+    - '.git/**/*'
+  TargetRubyVersion: 2.7.0
+  SuggestExtensions: false
+
+Style/FormatStringToken:
+  Exclude:
+    - spec/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Style/HashSyntax:
+  Enabled: false
+
+Layout/EndOfLine:
+  EnforcedStyle: lf
+
+Layout/ClassStructure:
+  Enabled: true
+  Categories:
+    module_inclusion:
+      - include
+      - prepend
+      - extend
+  ExpectedOrder:
+    - module_inclusion
+    - constants
+    - public_class_methods
+    - initializer
+    - instance_methods
+    - protected_methods
+    - private_methods
+
+# Trailing white space is meaningful in code examples
+Layout/TrailingWhitespace:
+  AllowInHeredoc: true
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Layout/LineLength:
+  Max: 120
+  AllowedPatterns:
+    - !ruby/regexp /\A +(it|describe|context|shared_examples|include_examples|it_behaves_like) ["']/
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+    - '**/*.gemspec'
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Metrics/ClassLength:
+  Max: 150
+
+Metrics/MethodLength:
+  Max: 15
