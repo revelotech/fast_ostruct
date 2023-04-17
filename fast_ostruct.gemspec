@@ -1,19 +1,18 @@
 # frozen_string_literal: true
 
-require_relative 'lib/fast_open_struct'
+require_relative 'lib/fast_ostruct'
 
 Gem::Specification.new do |spec|
-  spec.name        = 'fast_open_struct'
+  spec.name        = 'fast_ostruct'
   spec.version     = FastOpenStruct::VERSION
   spec.authors     = ['Washington Silva']
   spec.email       = ['w-osilva@hotmail.com']
-  spec.homepage    = 'https://github.com/w-osilva/fast_open_struct'
-  spec.summary     = 'A realy fast open struct alternative'
+  spec.homepage    = 'https://github.com/w-osilva/fast_ostruct'
+  spec.summary     = 'A fast open struct alternative'
   spec.licenses    = ['MIT']
 
   spec.required_ruby_version = Gem::Requirement.new('>= 3.0')
 
-  spec.metadata['allowed_push_host'] = 'https://rubygems.org'
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = spec.homepage
   spec.metadata['github_repo'] = spec.homepage
