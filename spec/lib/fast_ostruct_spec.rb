@@ -144,6 +144,13 @@ RSpec.describe FastOpenStruct do
       object = described_class.new
       expect(object.save).to eq(object)
     end
+
+    context 'when attributes are given' do
+      it 'returns self' do
+        object = described_class.new
+        expect(object.save(some_extra_key: 'foo')).to eq(object)
+      end
+    end
   end
 
   describe '#save!' do

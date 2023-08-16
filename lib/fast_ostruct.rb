@@ -95,7 +95,7 @@ class FastOpenStruct
     false
   end
 
-  def save
+  def save(*)
     self
   end
 
