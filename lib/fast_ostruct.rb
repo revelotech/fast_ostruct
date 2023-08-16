@@ -2,14 +2,25 @@
 
 require 'json'
 require 'set'
+require_relative 'fast_ostruct/config'
+require_relative 'fast_ostruct/version'
 
 class FastOpenStruct
-  VERSION = '1.0.1'
+  class << self
+    def configure
+      yield config
+    end
 
-  INITIALIZE_OPTIONS = { deep_initialize: true }.freeze
-  ATTRIBUTES_OPTIONS = { symbolize_keys: false }.freeze
+    def config
+      @config ||= Config.new
+    end
+  end
 
-  def initialize(attributes = {}, options = INITIALIZE_OPTIONS)
+  def config
+    self.class.config
+  end
+
+  def initialize(attributes = {}, options = config.initialize_options)
     if options[:deep_initialize]
       attributes.except(*options.keys).each_pair do |name, value|
         self[name] = deep_initialize(value, options)
@@ -21,7 +32,7 @@ class FastOpenStruct
     end
   end
 
-  def attributes(options = ATTRIBUTES_OPTIONS)
+  def attributes(options = config.attributes_options)
     key_formatter = if options[:symbolize_keys]
                       proc { |name| name.to_sym }
                     else
@@ -113,7 +124,7 @@ class FastOpenStruct
     end
   end
 
-  def deep_initialize(value, options = INITIALIZE_OPTIONS)
+  def deep_initialize(value, options = config.initialize_options)
     if value.is_a?(Array)
       value = value.map { |v| v.is_a?(Hash) ? self.class.new(v, options) : v }
     elsif value.is_a?(Hash)

@@ -196,4 +196,20 @@ RSpec.describe FastOpenStruct do
       expect(object.new_record?).to eq(true)
     end
   end
+
+  describe '.configure' do
+    it 'yields the configuration' do
+      expect { |b| described_class.configure(&b) }.to yield_with_args(FastOpenStruct::Config)
+    end
+
+    it 'sets the configuration' do
+      described_class.configure do |config|
+        config.initialize_options = { deep_initialize: false }
+        config.attributes_options = { symbolize_keys: true }
+      end
+
+      expect(described_class.config.initialize_options).to eq({ deep_initialize: false })
+      expect(described_class.config.attributes_options).to eq({ symbolize_keys: true })
+    end
+  end
 end
