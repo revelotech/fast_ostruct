@@ -92,6 +92,18 @@ RSpec.describe FastOpenStruct do
     end
   end
 
+  describe '#slice' do
+    it 'returns a Hash with the given keys' do
+      object = described_class.new(attributes)
+      expect(object.slice(:name, :age)).to eq(
+        {
+          name: 'John',
+          age: 30
+        }
+      )
+    end
+  end
+
   describe '#[]' do
     it 'returns the value of the object at the given key' do
       object = described_class.new(attributes)

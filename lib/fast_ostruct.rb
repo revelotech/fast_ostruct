@@ -72,6 +72,11 @@ class FastOpenStruct
     attributes(symbolize_keys: true).dig(name, *identifiers)
   end
 
+  def slice(*names)
+    names.map!(&:to_sym)
+    attributes(symbolize_keys: true).slice(*names)
+  end
+
   def delete_field(name)
     attribute_unset(name)
   end
