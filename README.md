@@ -56,6 +56,19 @@ my_struct['lastname'] # => 'Connor'
 my_struct.dig(:age) # => 30
 ```
 
+## Configuration
+
+Create an initializer file and add the following code:
+```ruby
+FastOpenStruct.configure do |config|
+  # default: true | it will make a deep initialization of the attributes, converting Hash to FastOpenStruct 
+  config.initialize_options = { deep_initialize: true }
+  
+  # default: false | if true, it will symbolize the keys of the attributes
+  config.attributes_options = { symbolize_keys: false }
+end
+```
+
 ## Benchmarks
 ```
 Initialization benchmark
