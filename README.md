@@ -3,7 +3,7 @@
 [![FastOpenStruct CI](https://github.com/revelotech/fast_ostruct/actions/workflows/fast-ostruct_ci.yml/badge.svg)](https://github.com/revelotech/fast_ostruct/actions/workflows/fast-ostruct_ci.yml)
 [![Gem Version](https://badge.fury.io/rb/fast_ostruct.svg)](https://badge.fury.io/rb/fast_ostruct)
 
-It was inspirated on [DynamicClass](https://github.com/amcaplan/dynamic_class) gem.
+It was inspired by [DynamicClass](https://github.com/amcaplan/dynamic_class) gem.
 
 The main purpose of this gem is to behave like [OpenStruct](https://ruby-doc.org/stdlib-2.5.1/libdoc/ostruct/rdoc/OpenStruct.html), but with some extra powers.
 
