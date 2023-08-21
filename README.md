@@ -14,7 +14,7 @@ With this in mind, FastOpenStruct was designed to solve this issue by caching th
 
 ## Diferences from OpenStruct
 
-- It 40x is faster
+- It is 40x faster
 - It has a cache of the methods that are created
 - It does not uses @table instance variable
 - It has a dig method that works like Hash#dig to access nested attributes
