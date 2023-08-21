@@ -1,22 +1,25 @@
 # Fast OpenStruct
 
-[![FastOpenStruct CI](https://github.com/w-osilva/fast_ostruct/actions/workflows/fast-ostruct_ci.yml/badge.svg)](https://github.com/w-osilva/fast_ostruct/actions/workflows/fast-ostruct_ci.yml)
+[![FastOpenStruct CI](https://github.com/revelotech/fast_ostruct/actions/workflows/fast-ostruct_ci.yml/badge.svg)](https://github.com/revelotech/fast_ostruct/actions/workflows/fast-ostruct_ci.yml)
 [![Gem Version](https://badge.fury.io/rb/fast_ostruct.svg)](https://badge.fury.io/rb/fast_ostruct)
 
-It was inspirated on [DynamicClass](https://github.com/amcaplan/dynamic_class) gem.
+It was inspired by [DynamicClass](https://github.com/amcaplan/dynamic_class) gem.
 
-The main purpose of this gem is behave like an OpenStruct, but with some extra powers.
+The main purpose of this gem is to behave like [OpenStruct](https://ruby-doc.org/stdlib-2.5.1/libdoc/ostruct/rdoc/OpenStruct.html), but with some extra powers.
 
-The main difference for OpenStruct is that this implementation has a cache of the methods that are created, so it is faster.
+## Motivation
+It's well known that OpenStruct suffers with performance issues and it's its use [is not advised by Rubocop by default](https://www.rubydoc.info/gems/rubocop/0.61.1/RuboCop/Cop/Performance/OpenStruct). The main issue happens because for each attribute of the instance, it has to create each accessor dynamically.
+
+With this in mind, FastOpenStruct was designed to solve this issue by caching the accessor methods created for each attribute for the first time. This way FastOpenStruct can be up to 40x faster.
 
 ## Diferences from OpenStruct
 
-- It is faster
+- It is 40x faster
 - It has a cache of the methods that are created
 - It does not uses @table instance variable
 - It has a dig method that works like Hash#dig to access nested attributes
 - It implements some methods of **ActiveModel::API** and **ActiveModel::Serialization**, making it useful for some cases (i.e. using it as :class for FactoryBot factories)
-- It makes a deep initialization of the attributes, converting Hash to FastOpenStruct
+- It makes a deep initialization of the attributes, converting Hash into FastOpenStruct
 
 ## Installation
 
@@ -61,7 +64,7 @@ my_struct.dig(:age) # => 30
 Create an initializer file and add the following code:
 ```ruby
 FastOpenStruct.configure do |config|
-  # default: true | it will make a deep initialization of the attributes, converting Hash to FastOpenStruct 
+  # default: true | it will make a deep initialization of the attributes, converting Hash into FastOpenStruct 
   config.initialize_options = { deep_initialize: true }
   
   # default: false | if true, it will symbolize the keys of the attributes
@@ -130,6 +133,9 @@ Comparison:
           OpenStruct:    52704.7 i/s - 40.51x  slower
 
 ```
+
+## Caveats
+Due to caching the methods, it's expected that the application will consume more memory, which will be garbage-collected as soon as this object is not used.
 
 ## Contributing
 
