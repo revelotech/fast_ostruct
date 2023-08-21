@@ -8,9 +8,9 @@ It was inspired by [DynamicClass](https://github.com/amcaplan/dynamic_class) gem
 The main purpose of this gem is to behave like [OpenStruct](https://ruby-doc.org/stdlib-2.5.1/libdoc/ostruct/rdoc/OpenStruct.html), but with some extra powers.
 
 ## Motivation
-It's well known that OpenStruct suffers with performance issues and it's its use [is not advised by Rubocop by default](https://www.rubydoc.info/gems/rubocop/0.61.1/RuboCop/Cop/Performance/OpenStruct). The main issue happens because for each attribute of the instance, it has to create each accessor dynamically.
+It's well known that OpenStruct suffers with performance issues and its use [is not advised by Rubocop by default](https://www.rubydoc.info/gems/rubocop/0.61.1/RuboCop/Cop/Performance/OpenStruct). The main issue happens because for each attribute of the instance, it has to create each accessor dynamically.
 
-With this in mind, FastOpenStruct was designed to solve this issue by caching the accessor methods created for each attribute for the first time. This way FastOpenStruct can be up to 40x faster.
+With this in mind, FastOpenStruct was designed to solve it by caching the accessor methods created for each attribute on the first time. This way FastOpenStruct can be up to 40x faster.
 
 ## Diferences from OpenStruct
 
