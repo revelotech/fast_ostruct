@@ -6,11 +6,12 @@
 /pkg/
 /spec/reports/
 /tmp/
-.DS_Store
-# rspec failure tracking
+
+benchmark-*.json
 .rspec_status
 Gemfile.lock
 fast_open_struct*.gem
 
 # Devs stuffs
+.DS_Store
 .idea

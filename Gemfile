@@ -6,6 +6,7 @@ source 'https://rubygems.org'
 
 group :development, :test do
   gem 'benchmark-ips', '>= 2'
+  gem 'kalibera'
   gem 'pry', '>= 0.14'
   gem 'rack-test', '~> 1.1'
   gem 'rake', '~> 13.0'
