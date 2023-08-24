@@ -12,6 +12,6 @@ benchmark-*.json
 Gemfile.lock
 fast_open_struct*.gem
 
-# Devs stuffs
+# Devs stuff
 .DS_Store
 .idea
