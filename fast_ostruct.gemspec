@@ -5,10 +5,10 @@ require_relative 'lib/fast_ostruct'
 Gem::Specification.new do |spec|
   spec.name        = 'fast_ostruct'
   spec.version     = FastOpenStruct::VERSION
-  spec.authors     = ['Washington Silva']
-  spec.email       = ['w-osilva@hotmail.com']
-  spec.homepage    = 'https://github.com/w-osilva/fast_ostruct'
-  spec.summary     = 'A fast open struct alternative'
+  spec.authors     = ['Revelo']
+  spec.email       = ['devs@revelo.com']
+  spec.homepage    = 'https://github.com/revelotech/fast_ostruct'
+  spec.summary     = 'An OpenStruct alternative focused on performance.'
   spec.licenses    = ['MIT']
 
   spec.required_ruby_version = Gem::Requirement.new('>= 3.0')

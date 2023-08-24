@@ -50,6 +50,10 @@ Layout/LineLength:
   AllowedPatterns:
     - !ruby/regexp /\A +(it|describe|context|shared_examples|include_examples|it_behaves_like) ["']/
 
+Metrics/AbcSize:
+  Exclude:
+    - 'lib/tasks/benchmark.rake'
+
 Metrics/BlockLength:
   Exclude:
     - 'Rakefile'
@@ -66,3 +70,5 @@ Metrics/ClassLength:
 
 Metrics/MethodLength:
   Max: 15
+  Exclude:
+    - 'lib/tasks/benchmark.rake'
